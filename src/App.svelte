@@ -1,5 +1,5 @@
 <script>
-    import Goals from "./Goals.svelte";
+  import Goals from "./Goals.svelte";
 
   let currentYear = new Date().getFullYear();
 

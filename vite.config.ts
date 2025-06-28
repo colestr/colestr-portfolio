@@ -8,4 +8,6 @@ export default defineConfig({
     tailwindcss(),
     svelte()
   ],
+
+  base: process.env.NODE_ENV === 'production' ? '/colestr-portfolio/' : '/',
 })
