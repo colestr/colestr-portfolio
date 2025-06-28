@@ -1,5 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Svelte App to GitHub Pages # Renamed for clarity
 
 on:
   # Runs on pushes targeting the default branch
@@ -23,21 +22,35 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
-  deploy:
+  deploy: # Or 'build-and-deploy' if you prefer a more descriptive name
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Setup Pages
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a recent stable LTS version (e.g., '20' or '22')
+          cache: 'npm' # Cache npm dependencies for faster subsequent builds
+
+      - name: Install Dependencies # Install project dependencies
+        run: npm install
+
+      - name: Build Project # Run the Vite build command
+        run: npm run build
+
+      - name: Setup Pages # This sets up the Pages environment
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
