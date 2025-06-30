@@ -25,8 +25,17 @@
 </header>
 
 <div class="container mx-auto"> 
-  <section class="flex-col h-[85vh] bg-orange-800">
-    
+  <section class="flex-col h-[85vh]">
+    <div class="relative min-h-screen bg-gray-700">
+      <div class="absolute inset-0 bg-gradient-radial from-black via-amber-300 to-transparent">
+        <div class="flex items-center justify-center h-full text-white text-4xl font-bold">
+          Fading into the distance...
+        </div>
+      </div>
+    </div>
+    <div class="absolute left-0 right-0 top-0 bottom-100">
+
+    </div>
   </section>
 
   <section class="flex-col h-[85vh] bg-orange-700">
