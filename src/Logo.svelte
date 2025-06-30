@@ -7,7 +7,7 @@
     <div class="bg-zinc-500 w-1"></div>
     <h1 class="text-2xl font-bold font-[Courier] text-white pl-2">Cole</h1>
     <h1 class="text-2xl font-bold font-[Courier] text-lime-600">str</h1>
-    <h1 class="text-2xl font-bold font-[Courier] text-lime-600 blinking-caret">_</h1>
+    <h1 class="text-2xl font-bold font-[Courier] text-lime-600 blinking-caret pr-4">_</h1>
 </div>
 
 <style>
