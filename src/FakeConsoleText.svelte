@@ -157,8 +157,8 @@
   
     // The main automated console loop
     async function autoConsoleLoop(): Promise<void> {
-      const minDelay = 2000; // 2 seconds
-      const maxDelay = 5000; // 5 seconds
+      const minDelay = 1000; // 2 seconds
+      const maxDelay = 2000; // 5 seconds
       const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
   
       loopTimeout = setTimeout(async () => {
